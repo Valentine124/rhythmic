@@ -351,6 +351,13 @@ template {
   display: none;
 }
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
 /**
  * App styles
 */
@@ -365,11 +372,12 @@ template {
   --color-primary-06: #a692da;
 
   --color-surface-01: #121212;
-  --color-surface-02: #282828;
-  --color-surface-03: #3f3f3f;
-  --color-surface-04: #575757;
-  --color-surface-05: #717171;
-  --color-surface-02: #8b8b8b;
+  --color-surface-02: #212121;
+  --color-surface-03: #282828;
+  --color-surface-04: #3f3f3f;
+  --color-surface-05: #575757;
+  --color-surface-06: #717171;
+  --color-surface-07: #8b8b8b;
 
   /* Fonts */
   --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -385,6 +393,10 @@ template {
   --line-height-small: 1.2;
   --line-height-base: 1.5;
   --line-height-big: 1.8;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

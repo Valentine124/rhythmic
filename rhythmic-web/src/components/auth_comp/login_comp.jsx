@@ -1,9 +1,8 @@
-import bgImg from "../assets/images/rhythmic-logo.png"
-import dImg from "../assets/images/login-image.png"
-import "./auth-styles.css"
-import { BrowserRouter, Link } from "react-router-dom"
+import bgImg from "../../assets/images/rhythmic-logo.png"
+import dImg from "../../assets/images/login-image.png"
+import "../../styles/auth-styles.css"
 
-function SignUpPage() {
+function LogInPage() {
   return (
     <>
       <div>
@@ -14,7 +13,7 @@ function SignUpPage() {
         <main>
           <div className="auth-container">
             <div className="auth-main">
-              <h3 className="auth-title">SignUp to Rhythmic</h3>
+              <h3 className="auth-title">LogIn to Rhytnmic</h3>
               <form className="form" action="firbase-backend" method="post">
                 <div>
                   <label htmlFor="email">Email: </label>
@@ -24,9 +23,8 @@ function SignUpPage() {
                   <label htmlFor="pass">Password: </label>
                   <input type="password" id="pass" placeholder="Enter Password" name="user_pass" />
                 </div>
-                
                 <div>
-                  <button className="auth-button" type="button">SignUp</button>
+                  <button className="auth-button" type="button">LogIn</button>
                 </div>
               </form>
 
@@ -40,8 +38,7 @@ function SignUpPage() {
                 </svg>
               </div>
               <div className="auth-text">
-                <p>Already have an account <BrowserRouter><Link to="/login">Login</Link></BrowserRouter></p>
-                
+                <p>Don't have an account <a href="#">SignUp</a></p>
               </div>
             </div>
             
@@ -52,8 +49,7 @@ function SignUpPage() {
         </main>
       </div>
     </>
-
   )
 }
 
-export default SignUpPage;
+export default LogInPage;
