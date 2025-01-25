@@ -2,36 +2,10 @@ import { CLIENT_SECRETE, CLIENT_ID } from "./api-keys";
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-const [token, setToken] = useState("")
-
-function apiToken() {
-
-  const url = "https://accounts.spotify.com/api/token"
-  const body = "grant_type=client_credentials&client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRETE;
-
-  useEffect(() => {
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: body,
-    }).then(res => {
-      return res.json()
-    }).then(accessToken => {
-      setToken(accessToken.access_token)
-    })
-
-  }, [])
-}
-
 export default function searchData (name="", type=[]) {
   if (name === "" && type === undefined) {
     throw Error("Name and type can't be empty");
   }
-
-  /* Set the token state */
-  apiToken();
 
   const {isPending, error, data} = useQuery({
     queryKey: ['musicDatas', token],

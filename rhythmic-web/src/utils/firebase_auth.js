@@ -1,17 +1,18 @@
 import { initializeApp } from "firebase/app";
-import { keys } from "./firebase_keys";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: keys.API_KEY,
-    authDomain: keys.AUTH_DOMAIN,
-    projectId: keys.PROJECT_ID,
-    storageBucket: keys.STORAGE_BUCKET,
-    messagingSenderId: keys.MESSAGE_SENDER_ID,
-    appId: keys.APP_ID,
-    measurementId: keys.MEASUREMENT_ID
+  apiKey: "AIzaSyCfgOU3c5FM01G47Vf4I3GwVEo69gq0Pi8",
+  authDomain: "rhythmic-b53ea.firebaseapp.com",
+  projectId: "rhythmic-b53ea",
+  storageBucket: "rhythmic-b53ea.firebasestorage.app",
+  messagingSenderId: "759215119590",
+  appId: "1:759215119590:web:906acc3284ff5c18942f27",
+  measurementId: "G-2RGE1W33DB"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app)
 
-createUserWithEmailAndPassword()
+export { app, auth };

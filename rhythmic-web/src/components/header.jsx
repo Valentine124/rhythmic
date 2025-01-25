@@ -1,8 +1,14 @@
 import logo from "../assets/images/rhythmic-logo.png"
 import avatar from "../assets/images/avatar.png"
 import '../styles/comp-styles.css'
+import { doSignOut } from "../utils/auth_function"
 
 function Header() {
+
+  const onLoggedout = () => {
+    doSignOut()
+  }
+
   return (
     <>
     <div className="main-header">
@@ -19,6 +25,7 @@ function Header() {
           <img src={avatar} width="50rem" height="50rem" alt="User-img" />
         </div>
       </div>
+      <button type="button" onClick={onLoggedout}>Logout</button>
     </div>
     </>
   )

@@ -1,11 +1,15 @@
-import Header from "../components/header"
-import Navigation from "../components/Navigation"
-import "../styles/comp-styles.css"
-import { useState } from "react"
+import Header from "../components/header";
+import Navigation from "../components/Navigation";
+import "../styles/comp-styles.css";
+import useSearchData from '../state/services/queryApi'
 
 function Home() {
 
-  const [data, setData] = useState("");
+  const artist = 'SteveHills';
+  const key = 'data';
+  const type = 'track';
+
+  const { data, error, isLoading } = useSearchData(key, artist, type);
 
   return (
     <>
@@ -17,7 +21,7 @@ function Home() {
     <div className="page-body-container">
      <main className="main">
         <div>
-          <h1></h1>
+          <h1>{data}</h1>
         </div>
       </main>
       <aside className="aside">
